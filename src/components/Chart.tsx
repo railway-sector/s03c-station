@@ -13,7 +13,7 @@ import {
   statusArray,
   structureTypes,
 } from "../uniqueValues";
-import { chartRenderer, resetAllLayers } from "../chartRenderer";
+import { chartRenderer, resetAllLayers, resetQuerc } from "../chartRenderer";
 import { MyContext } from "../contexts/MyContext";
 import FeatureFilter from "@arcgis/core/layers/support/FeatureFilter";
 import { queryDefinitionExpression } from "../queryExpression";
@@ -165,6 +165,8 @@ const Chart = () => {
       sublayerViewFilter.filter = new FeatureFilter({
         where: undefined,
       });
+
+      resetQuerc(queryc);
       resetAllLayers({ layers: sublayersAll });
     }
   }, [resetButtonClicked]);

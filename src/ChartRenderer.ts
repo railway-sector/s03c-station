@@ -110,11 +110,22 @@ export const highlightFilterBuildingSublayerView = ({
       sublayerView.filter = new FeatureFilter({
         where: qe,
       });
+
       highlightedSublayerView.current &&
         highlightedSublayerView.current.remove();
     }
   });
 };
+
+//--- Reset queryc
+export function resetQuerc(queryc: any) {
+  queryc.qExpression = undefined;
+  queryc.q2Expression = undefined;
+  queryc.status = undefined;
+  queryc.statusField = undefined;
+  queryc.chartCategory = undefined;
+  queryc.chartCategoryField = undefined;
+}
 
 //--- Click event on series
 interface clickSerisType {
